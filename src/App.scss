@@ -1,3 +1,38 @@
 #Sidnav{
   height: calc(100vh - 56px);
 }
+.pro-sidebar-inner{
+  background-color: #2b0169 !important;
+}
+
+.list{
+  display: flex;
+  justify-content: space-between;
+  background-color: #2b0169;
+  color: white;
+  padding: 20px;
+  margin: 20px 0px;
+  border-radius: 20px;
+
+}
+.img-container{
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  .list-img{
+    height: 50px;
+    width: 50px;
+  }
+}
+
+.edit-icon{
+  height: 50px;
+  width: 50px;
+  margin-right: 10px;
+}
+
+.delete-icon{
+  height: 50px;
+  width: 50px;
+}
