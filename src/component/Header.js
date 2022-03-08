@@ -1,7 +1,9 @@
 import React from "react";
-import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
+import { Navbar, Container, Nav, NavDropdown, Button } from "react-bootstrap";
 
 const Header = () => {
+  const token = window.localStorage.getItem("token");
+  console.log(token);
   return (
     <Navbar bg="info" expand="lg">
       <Container fluid>
@@ -24,6 +26,16 @@ const Header = () => {
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
+        {token !== null ? (
+          <div className="profile-container">
+            <img
+              className="user-img"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTWC-gNXo5Wd22oY8_BGdHdlMLHcMXvWPWVA&usqp=CAU"
+            />
+          </div>
+        ) : (
+          <Button variant="danger">Log in</Button>
+        )}
       </Container>
     </Navbar>
   );

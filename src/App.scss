@@ -1,3 +1,5 @@
+@import url("./Header.scss");
+
 #Sidnav{
   height: calc(100vh - 56px);
 }
@@ -35,4 +37,10 @@
 .delete-icon{
   height: 50px;
   width: 50px;
+}
+
+.move-icon{
+  height: 30px;
+  margin-right: 10px;
+  cursor: pointer;
 }

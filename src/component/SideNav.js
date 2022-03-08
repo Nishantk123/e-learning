@@ -24,17 +24,30 @@ import { BiCog } from "react-icons/bi";
 
 //import sidebar css from react-pro-sidebar module and our custom css
 import "react-pro-sidebar/dist/css/styles.css";
+import { useHistory } from "react-router-dom";
 // import "./Header.css";
 
 const SideNav = () => {
   //create initial menuCollapse state using useState hook
   const [menuCollapse, setMenuCollapse] = useState(false);
-
+  const history = useHistory();
   //create a custom function that will change menucollapse state from false to true and true to false
   const menuIconClick = () => {
     //condition checking to change state from true to false and vice versa
     menuCollapse ? setMenuCollapse(false) : setMenuCollapse(true);
   };
+
+  const handleEnquiryRoute = () =>{
+    history.push('/enquiry')
+  }
+
+  const handleRegisterRoute = () =>{
+    history.push('/register')
+  }
+
+  const handleEnrollmentRoute = () =>{
+    history.push('/enrollment')
+  }
 
   return (
     <>
@@ -56,10 +69,10 @@ const SideNav = () => {
               <MenuItem active={true} icon={<FiHome />}>
                 Home
               </MenuItem>
-              <MenuItem icon={<FaList />}>Category</MenuItem>
-              <MenuItem icon={<FaRegHeart />}>Favourite</MenuItem>
-              <MenuItem icon={<RiPencilLine />}>Author</MenuItem>
-              <MenuItem icon={<BiCog />}>Settings</MenuItem>
+              <MenuItem icon={<FaList />} onClick={handleEnquiryRoute}>Enquiry</MenuItem>
+              <MenuItem icon={<FaRegHeart />} onClick={handleRegisterRoute}>Register</MenuItem>
+              <MenuItem icon={<RiPencilLine />} onClick={handleEnrollmentRoute}>Enrollment</MenuItem>
+              <MenuItem icon={<BiCog />}>Transportation</MenuItem>
             </Menu>
           </SidebarContent>
           <SidebarFooter>
