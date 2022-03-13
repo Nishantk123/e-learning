@@ -6,6 +6,7 @@ import Enquiry from './component/Enquiry';
 import Header from './component/Header';
 import Register from './component/Register';
 import Enrollment from './component/Enrollement';
+import TransPortation from './component/Transportation';
 function App() {
   return (
     <Router>
@@ -15,6 +16,7 @@ function App() {
      <Route exact path="/enquiry" component={Enquiry} />
      <Route exact path="/register" component={ Register} />
      <Route exact path="/enrollment" component={Enrollment} />
+     <Route exact path="/transportation" component={TransPortation } />
     </div>
     </Router>
   );

@@ -48,6 +48,9 @@ const SideNav = () => {
   const handleEnrollmentRoute = () =>{
     history.push('/enrollment')
   }
+  const handleTransportationRoute = () =>{
+    history.push('/transportation')
+  }
 
   return (
     <>
@@ -72,7 +75,7 @@ const SideNav = () => {
               <MenuItem icon={<FaList />} onClick={handleEnquiryRoute}>Enquiry</MenuItem>
               <MenuItem icon={<FaRegHeart />} onClick={handleRegisterRoute}>Register</MenuItem>
               <MenuItem icon={<RiPencilLine />} onClick={handleEnrollmentRoute}>Enrollment</MenuItem>
-              <MenuItem icon={<BiCog />}>Transportation</MenuItem>
+              <MenuItem icon={<BiCog />} onClick={handleTransportationRoute}>Transportation</MenuItem>
             </Menu>
           </SidebarContent>
           <SidebarFooter>

@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import CustomModal from "./CustomModal";
 import SideNav from "./SideNav";
 
 const Enquiry = () => {
@@ -25,6 +26,16 @@ const Enquiry = () => {
       parent_email: "test@gmail.com",
     },
   ];
+  const [show, setShow] = useState(false);
+  const [selectedStudent, setSelectedStudent] = useState({})
+
+  const handlePageMove = (data) =>{
+    setShow(true)
+    setSelectedStudent(data)
+  }
+  const handleModalClose = () =>{
+    setShow(false)
+  }
   return (
     <div className="d-flex">
       <SideNav />
@@ -50,7 +61,7 @@ const Enquiry = () => {
                 <img
                   className="move-icon"
                   src="https://img.icons8.com/ios/500/forward-arrow.png"
-                  // onClick={handlePageMove}
+                  onClick={()=>handlePageMove(data)}
                 />
                 <img
                   className="delete-icon"
@@ -61,6 +72,12 @@ const Enquiry = () => {
           );
         })}
       </div>
+      {show &&<CustomModal
+       title="Move Enquiry to Register" 
+        studentData = {selectedStudent}
+        handleModalClose= {handleModalClose}
+
+        />}
     </div>
   );
 };
